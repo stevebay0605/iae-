@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 /**
  * Composant SectionHeader réutilisable
- * Style minimaliste professionnel avec polices Inter et Sora
+ * Style minimaliste professionnel avec polices Outfit et Cormorant
  * 
  * @param {string} title - Titre principal
  * @param {string} subtitle - Sous-titre/label (optionnel)

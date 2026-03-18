@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 /**
  * Composant Button réutilisable pour l'IAE
- * Style minimaliste professionnel avec polices Inter et Sora
+ * Style minimaliste professionnel avec polices Outfit et Cormorant
  * 
  * @param {string} variant - 'primary', 'secondary', 'accent', 'outline', 'ghost'
  * @param {string} size - 'sm', 'md', 'lg'
@@ -27,7 +27,7 @@ const Button = ({
   ...props
 }) => {
   // Styles de base
-  const baseStyles = 'inline-flex items-center justify-center font-inter font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none';
+  const baseStyles = 'inline-flex items-center justify-center font-outfit font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none';
   
   // Variantes de couleur
   const variants = {

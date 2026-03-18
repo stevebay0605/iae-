@@ -5,10 +5,10 @@
 @layer base {
   :root {
     /* Palette professionnelle IAE - Design minimaliste sans dégradés */
-    --iae-primary: #064E3B;
-    --iae-primary-light: #065F46;
-    --iae-accent: #B45309;
-    --iae-accent-light: #D97706;
+    --iae-primary: #1a6b3c;
+    --iae-primary-light: #2d9e5f;
+    --iae-accent: #c9a82c;
+    --iae-accent-light: #e8c84a;
     --iae-bg: #FAFAFA;
     --iae-surface: #FFFFFF;
     --iae-text: #111827;
@@ -28,7 +28,7 @@
     --secondary-foreground: 220 13% 9%;
     --muted: 0 0% 96%;
     --muted-foreground: 220 9% 46%;
-    --accent: 32 91% 37%;
+    --accent: 44 65% 48%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
@@ -57,13 +57,13 @@
   }
   
   body {
-    @apply bg-iae-bg text-gray-900 font-inter antialiased;
+    @apply bg-iae-bg text-gray-900 font-outfit antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
   
   /* Sora pour les titres - comme sur Racon360 */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sora font-semibold tracking-tight text-gray-900;
+    @apply font-cormorant font-semibold tracking-tight text-gray-900;
   }
   
   h1 {
@@ -107,40 +107,40 @@
   
   /* Bouton primaire */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-iae-primary text-white font-inter font-medium rounded-lg transition-colors duration-200 hover:bg-iae-primary-light focus:outline-none focus:ring-2 focus:ring-iae-primary focus:ring-offset-2;
+    @apply inline-flex items-center justify-center px-6 py-3 bg-iae-primary text-white font-outfit font-medium rounded-lg transition-colors duration-200 hover:bg-iae-primary-light focus:outline-none focus:ring-2 focus:ring-iae-primary focus:ring-offset-2;
   }
   
   /* Bouton secondaire/outline */
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-white text-gray-700 font-inter font-medium rounded-lg border border-gray-200 transition-colors duration-200 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center px-6 py-3 bg-white text-gray-700 font-outfit font-medium rounded-lg border border-gray-200 transition-colors duration-200 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2;
   }
   
   /* Bouton accent */
   .btn-accent {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-iae-accent text-white font-inter font-medium rounded-lg transition-colors duration-200 hover:bg-iae-accent-light focus:outline-none focus:ring-2 focus:ring-iae-accent focus:ring-offset-2;
+    @apply inline-flex items-center justify-center px-6 py-3 bg-iae-accent text-white font-outfit font-medium rounded-lg transition-colors duration-200 hover:bg-iae-accent-light focus:outline-none focus:ring-2 focus:ring-iae-accent focus:ring-offset-2;
   }
   
   /* Label/Tag */
   .tag-iae {
-    @apply inline-flex items-center px-3 py-1 bg-gray-100 text-gray-700 text-xs font-inter font-medium rounded-full;
+    @apply inline-flex items-center px-3 py-1 bg-gray-100 text-gray-700 text-xs font-outfit font-medium rounded-full;
   }
   
   .tag-accent {
-    @apply inline-flex items-center px-3 py-1 bg-iae-accent/10 text-iae-accent text-xs font-inter font-medium rounded-full;
+    @apply inline-flex items-center px-3 py-1 bg-iae-accent/10 text-iae-accent text-xs font-outfit font-medium rounded-full;
   }
   
   .tag-primary {
-    @apply inline-flex items-center px-3 py-1 bg-iae-primary/10 text-iae-primary text-xs font-inter font-medium rounded-full;
+    @apply inline-flex items-center px-3 py-1 bg-iae-primary/10 text-iae-primary text-xs font-outfit font-medium rounded-full;
   }
   
   /* Input field */
   .input-iae {
-    @apply w-full px-4 py-3 bg-white border border-gray-200 rounded-lg font-inter text-sm text-gray-900 placeholder:text-gray-400 transition-all duration-200 focus:outline-none focus:border-iae-primary focus:ring-1 focus:ring-iae-primary;
+    @apply w-full px-4 py-3 bg-white border border-gray-200 rounded-lg font-outfit text-sm text-gray-900 placeholder:text-gray-400 transition-all duration-200 focus:outline-none focus:border-iae-primary focus:ring-1 focus:ring-iae-primary;
   }
   
   /* Navigation link */
   .nav-link {
-    @apply font-inter text-sm font-medium text-gray-600 transition-colors duration-200 hover:text-iae-primary;
+    @apply font-outfit text-sm font-medium text-gray-600 transition-colors duration-200 hover:text-iae-primary;
   }
   
   .nav-link-active {
@@ -153,15 +153,15 @@
   }
   
   .section-label {
-    @apply inline-block font-inter text-xs font-semibold tracking-widest uppercase text-iae-accent mb-3;
+    @apply inline-block font-outfit text-xs font-semibold tracking-widest uppercase text-iae-accent mb-3;
   }
   
   .section-title {
-    @apply font-sora text-3xl md:text-4xl font-bold text-gray-900 mb-4;
+    @apply font-cormorant text-3xl md:text-4xl font-bold text-gray-900 mb-4;
   }
   
   .section-description {
-    @apply font-inter text-gray-600 text-lg max-w-2xl;
+    @apply font-outfit text-gray-600 text-lg max-w-2xl;
   }
   
   /* Feature card */
@@ -183,16 +183,16 @@
   }
   
   .stat-value {
-    @apply font-sora text-4xl md:text-5xl font-bold text-iae-primary;
+    @apply font-cormorant text-4xl md:text-5xl font-bold text-iae-primary;
   }
   
   .stat-label {
-    @apply font-inter text-sm text-gray-500 mt-2;
+    @apply font-outfit text-sm text-gray-500 mt-2;
   }
   
   /* Step indicator */
   .step-number {
-    @apply w-10 h-10 rounded-full bg-iae-primary text-white flex items-center justify-center font-inter font-semibold text-sm;
+    @apply w-10 h-10 rounded-full bg-iae-primary text-white flex items-center justify-center font-outfit font-semibold text-sm;
   }
   
   .step-number-inactive {
@@ -205,15 +205,15 @@
   }
   
   .testimonial-quote {
-    @apply font-inter text-gray-700 text-lg leading-relaxed mb-6;
+    @apply font-outfit text-gray-700 text-lg leading-relaxed mb-6;
   }
   
   .testimonial-author {
-    @apply font-inter font-semibold text-gray-900;
+    @apply font-outfit font-semibold text-gray-900;
   }
   
   .testimonial-role {
-    @apply font-inter text-sm text-gray-500;
+    @apply font-outfit text-sm text-gray-500;
   }
   
   /* Hero section with image */

@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -8,6 +8,16 @@ import Filieres from './pages/Filieres';
 import Actualites from './pages/Actualites';
 import Contact from './pages/Contact';
 import Preinscription from './pages/Preinscription';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 /**
  * Composant App - Configuration du routing
@@ -22,6 +32,7 @@ import Preinscription from './pages/Preinscription';
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col">
         {/* Navigation */}
         <Navbar />

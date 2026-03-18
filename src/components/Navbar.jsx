@@ -4,35 +4,31 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { navLinks } from '../data/content';
 
-/**
- * Navbar - Navigation principale de l'IAE
- * Style minimaliste inspiré de Racon360 avec polices Inter et Sora
- */
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-  
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
+
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location]);
-  
+
   const isActive = (path) => {
     if (path === '/') {
       return location.pathname === '/';
     }
     return location.pathname.startsWith(path);
   };
-  
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -43,18 +39,16 @@ const Navbar = () => {
     >
       <nav className="container-iae">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <span className="font-sora text-2xl md:text-3xl font-bold text-iae-primary">
+            <span className="font-cormorant text-2xl md:text-3xl font-bold text-iae-primary">
               I.A.E
             </span>
             <span className="hidden sm:block w-px h-6 bg-gray-200" />
-            <span className="hidden sm:block font-inter text-xs text-gray-500 max-w-[140px] leading-tight">
+            <span className="hidden sm:block font-outfit text-xs text-gray-500 max-w-[140px] leading-tight">
               Institut Africain de l'Excellence
             </span>
           </Link>
-          
-          {/* Navigation Desktop */}
+
           <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
@@ -66,33 +60,23 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-          
-          {/* Bouton CTA Desktop */}
+
           <div className="hidden lg:block">
-            <Link
-              to="/preinscription"
-              className="btn-primary text-sm"
-            >
-              Se préinscrire
+            <Link to="/preinscription" className="btn-primary text-sm">
+              Se preinscrire
             </Link>
           </div>
-          
-          {/* Bouton Menu Mobile */}
+
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </nav>
-      
-      {/* Menu Mobile */}
+
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -112,7 +96,7 @@ const Navbar = () => {
                 >
                   <Link
                     to={link.path}
-                    className={`block py-3 font-inter text-base font-medium transition-colors ${
+                    className={`block py-3 font-outfit text-base font-medium transition-colors ${
                       isActive(link.path)
                         ? 'text-iae-primary'
                         : 'text-gray-600 hover:text-iae-primary'
@@ -128,11 +112,8 @@ const Navbar = () => {
                 transition={{ delay: navLinks.length * 0.05 }}
                 className="pt-4"
               >
-                <Link
-                  to="/preinscription"
-                  className="btn-primary w-full justify-center"
-                >
-                  Se préinscrire
+                <Link to="/preinscription" className="btn-primary w-full justify-center">
+                  Se preinscrire
                 </Link>
               </motion.div>
             </div>

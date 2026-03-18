@@ -5,17 +5,17 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'sora': ['Sora', 'sans-serif'],
-        'inter': ['Inter', 'sans-serif'],
+        'cormorant': ['Cormorant Garamond', 'serif'],
+        'outfit': ['Outfit', 'sans-serif'],
       },
       colors: {
         // Palette professionnelle IAE - inspirée de Racon360
         // Pas de dégradés, couleurs unies uniquement
         'iae': {
-          'primary': '#064E3B',      // Vert forêt très foncé - couleur principale
-          'primary-light': '#065F46', // Vert légèrement plus clair pour hover
-          'accent': '#B45309',        // Ambre foncé - accent/or subtil
-          'accent-light': '#D97706',  // Ambre pour hover
+          'primary': '#1a6b3c',      // Vert forêt très foncé - couleur principale
+          'primary-light': '#2d9e5f', // Vert légèrement plus clair pour hover
+          'accent': '#c9a82c',        // Ambre foncé - accent/or subtil
+          'accent-light': '#e8c84a',  // Ambre pour hover
           'bg': '#FAFAFA',            // Blanc cassé très léger
           'surface': '#FFFFFF',       // Blanc pur pour cards
         },

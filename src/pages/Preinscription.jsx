@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight, Check, Upload, User, GraduationCap, FileText
 import { filieres } from '../data/content';
 
 /**
- * Page Préinscription - Formulaire multi-étapes
+ * Page Preinscription - Formulaire multi-etapes
  * Style minimaliste professionnel
  */
 const Preinscription = () => {
@@ -40,7 +40,7 @@ const Preinscription = () => {
     if (step === 1) {
       if (!formData.nom.trim()) newErrors.nom = 'Le nom est requis';
       if (!formData.postnom.trim()) newErrors.postnom = 'Le postnom est requis';
-      if (!formData.prenom.trim()) newErrors.prenom = 'Le prénom est requis';
+      if (!formData.prenom.trim()) newErrors.prenom = 'Le prenom est requis';
       if (!formData.dateNaissance) newErrors.dateNaissance = 'La date de naissance est requise';
       if (!formData.lieuNaissance.trim()) newErrors.lieuNaissance = 'Le lieu de naissance est requis';
       if (!formData.sexe) newErrors.sexe = 'Le sexe est requis';
@@ -52,13 +52,13 @@ const Preinscription = () => {
     }
     
     if (step === 2) {
-      if (!formData.anneeBac.trim()) newErrors.anneeBac = 'L\'année d\'obtention est requise';
-      if (!formData.serieBac) newErrors.serieBac = 'La série est requise';
+      if (!formData.anneeBac.trim()) newErrors.anneeBac = 'L\'annee d\'obtention est requise';
+      if (!formData.serieBac) newErrors.serieBac = 'La serie est requise';
       if (!formData.mentionBac) newErrors.mentionBac = 'La mention est requise';
     }
     
     if (step === 3) {
-      if (!formData.filiere) newErrors.filiere = 'La filière est requise';
+      if (!formData.filiere) newErrors.filiere = 'La filiere est requise';
       if (!formData.certifieExactitude) newErrors.certifieExactitude = 'Vous devez certifier l\'exactitude des informations';
     }
     
@@ -99,12 +99,12 @@ const Preinscription = () => {
   };
   
   // Progress Bar
-  const ProgressBar = () => (
+  const renderProgressBar = () => (
     <div className="mb-10">
       <div className="flex items-center justify-between">
         {[1, 2, 3].map((step) => (
           <div key={step} className="flex items-center flex-1 last:flex-0">
-            <div className={`w-10 h-10 rounded-full flex items-center justify-center font-inter font-semibold text-sm transition-colors ${
+            <div className={`w-10 h-10 rounded-full flex items-center justify-center font-outfit font-semibold text-sm transition-colors ${
               step < currentStep 
                 ? 'bg-iae-primary text-white' 
                 : step === currentStep 
@@ -121,16 +121,16 @@ const Preinscription = () => {
           </div>
         ))}
       </div>
-      <div className="flex justify-between mt-3 text-sm font-inter">
+      <div className="flex justify-between mt-3 text-sm font-outfit">
         <span className={currentStep === 1 ? 'text-iae-primary font-medium' : 'text-gray-400'}>Informations</span>
-        <span className={currentStep === 2 ? 'text-iae-primary font-medium' : 'text-gray-400'}>Baccalauréat</span>
+        <span className={currentStep === 2 ? 'text-iae-primary font-medium' : 'text-gray-400'}>Baccalaureat</span>
         <span className={currentStep === 3 ? 'text-iae-primary font-medium' : 'text-gray-400'}>Documents</span>
       </div>
     </div>
   );
   
-  // Étape 1: Informations personnelles
-  const Step1 = () => (
+  // Etape 1: Informations personnelles
+  const renderStep1 = () => (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
@@ -142,14 +142,14 @@ const Preinscription = () => {
         <div className="w-10 h-10 rounded-lg bg-iae-primary/10 flex items-center justify-center">
           <User className="w-5 h-5 text-iae-primary" />
         </div>
-        <h2 className="font-sora text-2xl font-bold text-gray-900">
+        <h2 className="font-cormorant text-2xl font-bold text-gray-900">
           Informations personnelles
         </h2>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div>
-          <label className="block font-inter text-sm font-medium text-gray-700 mb-2">
+          <label className="block font-outfit text-sm font-medium text-gray-700 mb-2">
             Nom <span className="text-red-500">*</span>
           </label>
           <input
@@ -164,7 +164,7 @@ const Preinscription = () => {
         </div>
         
         <div>
-          <label className="block font-inter text-sm font-medium text-gray-700 mb-2">
+          <label className="block font-outfit text-sm font-medium text-gray-700 mb-2">
             Postnom <span className="text-red-500">*</span>
           </label>
           <input
@@ -179,8 +179,8 @@ const Preinscription = () => {
         </div>
         
         <div>
-          <label className="block font-inter text-sm font-medium text-gray-700 mb-2">
-            Prénom <span className="text-red-500">*</span>
+          <label className="block font-outfit text-sm font-medium text-gray-700 mb-2">
+            Prenom <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -188,7 +188,7 @@ const Preinscription = () => {
             value={formData.prenom}
             onChange={handleChange}
             className={`input-iae ${errors.prenom ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
-            placeholder="Votre prénom"
+            placeholder="Votre prenom"
           />
           {errors.prenom && <p className="mt-1 text-sm text-red-500">{errors.prenom}</p>}
         </div>
@@ -196,7 +196,7 @@ const Preinscription = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label className="block font-inter text-sm font-medium text-gray-700 mb-2">
+          <label className="block font-outfit text-sm font-medium text-gray-700 mb-2">
             Date de naissance <span className="text-red-500">*</span>
           </label>
           <input
@@ -210,7 +210,7 @@ const Preinscription = () => {
         </div>
         
         <div>
-          <label className="block font-inter text-sm font-medium text-gray-700 mb-2">
+          <label className="block font-outfit text-sm font-medium text-gray-700 mb-2">
             Lieu de naissance <span className="text-red-500">*</span>
           </label>
           <input
@@ -227,7 +227,7 @@ const Preinscription = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label className="block font-inter text-sm font-medium text-gray-700 mb-2">
+          <label className="block font-outfit text-sm font-medium text-gray-700 mb-2">
             Sexe <span className="text-red-500">*</span>
           </label>
           <select
@@ -236,16 +236,16 @@ const Preinscription = () => {
             onChange={handleChange}
             className={`input-iae ${errors.sexe ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
           >
-            <option value="">Sélectionnez</option>
+            <option value="">Selectionnez</option>
             <option value="masculin">Masculin</option>
-            <option value="feminin">Féminin</option>
+            <option value="feminin">Feminin</option>
           </select>
           {errors.sexe && <p className="mt-1 text-sm text-red-500">{errors.sexe}</p>}
         </div>
         
         <div>
-          <label className="block font-inter text-sm font-medium text-gray-700 mb-2">
-            Nationalité
+          <label className="block font-outfit text-sm font-medium text-gray-700 mb-2">
+            Nationalite
           </label>
           <input
             type="text"
@@ -253,14 +253,14 @@ const Preinscription = () => {
             value={formData.nationalite}
             onChange={handleChange}
             className="input-iae"
-            placeholder="Votre nationalité"
+            placeholder="Votre nationalite"
           />
         </div>
       </div>
       
       <div>
-        <label className="block font-inter text-sm font-medium text-gray-700 mb-2">
-          Adresse complète
+        <label className="block font-outfit text-sm font-medium text-gray-700 mb-2">
+          Adresse complete
         </label>
         <textarea
           name="adresse"
@@ -268,14 +268,14 @@ const Preinscription = () => {
           onChange={handleChange}
           rows={2}
           className="input-iae resize-none"
-          placeholder="Votre adresse complète"
+          placeholder="Votre adresse complete"
         />
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label className="block font-inter text-sm font-medium text-gray-700 mb-2">
-            Téléphone
+          <label className="block font-outfit text-sm font-medium text-gray-700 mb-2">
+            Telephone
           </label>
           <input
             type="tel"
@@ -288,7 +288,7 @@ const Preinscription = () => {
         </div>
         
         <div>
-          <label className="block font-inter text-sm font-medium text-gray-700 mb-2">
+          <label className="block font-outfit text-sm font-medium text-gray-700 mb-2">
             Email <span className="text-red-500">*</span>
           </label>
           <input
@@ -305,8 +305,8 @@ const Preinscription = () => {
     </motion.div>
   );
   
-  // Étape 2: Baccalauréat
-  const Step2 = () => (
+  // Etape 2: Baccalaureat
+  const renderStep2 = () => (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
@@ -318,15 +318,15 @@ const Preinscription = () => {
         <div className="w-10 h-10 rounded-lg bg-iae-primary/10 flex items-center justify-center">
           <GraduationCap className="w-5 h-5 text-iae-primary" />
         </div>
-        <h2 className="font-sora text-2xl font-bold text-gray-900">
-          Informations sur le baccalauréat
+        <h2 className="font-cormorant text-2xl font-bold text-gray-900">
+          Informations sur le baccalaureat
         </h2>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label className="block font-inter text-sm font-medium text-gray-700 mb-2">
-            Année d'obtention <span className="text-red-500">*</span>
+          <label className="block font-outfit text-sm font-medium text-gray-700 mb-2">
+            Annee d'obtention <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -340,8 +340,8 @@ const Preinscription = () => {
         </div>
         
         <div>
-          <label className="block font-inter text-sm font-medium text-gray-700 mb-2">
-            Série <span className="text-red-500">*</span>
+          <label className="block font-outfit text-sm font-medium text-gray-700 mb-2">
+            Serie <span className="text-red-500">*</span>
           </label>
           <select
             name="serieBac"
@@ -349,9 +349,9 @@ const Preinscription = () => {
             onChange={handleChange}
             className={`input-iae ${errors.serieBac ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
           >
-            <option value="">Sélectionnez la série</option>
+            <option value="">Selectionnez la serie</option>
             <option value="scientifique">Scientifique</option>
-            <option value="litteraire">Littéraire</option>
+            <option value="litteraire">Litteraire</option>
             <option value="commerciale">Commerciale</option>
             <option value="technique">Technique</option>
           </select>
@@ -361,7 +361,7 @@ const Preinscription = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label className="block font-inter text-sm font-medium text-gray-700 mb-2">
+          <label className="block font-outfit text-sm font-medium text-gray-700 mb-2">
             Mention <span className="text-red-500">*</span>
           </label>
           <select
@@ -370,18 +370,18 @@ const Preinscription = () => {
             onChange={handleChange}
             className={`input-iae ${errors.mentionBac ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
           >
-            <option value="">Sélectionnez la mention</option>
+            <option value="">Selectionnez la mention</option>
             <option value="passable">Passable</option>
             <option value="assez-bien">Assez Bien</option>
             <option value="bien">Bien</option>
-            <option value="tres-bien">Très Bien</option>
+            <option value="tres-bien">Tres Bien</option>
           </select>
           {errors.mentionBac && <p className="mt-1 text-sm text-red-500">{errors.mentionBac}</p>}
         </div>
         
         <div>
-          <label className="block font-inter text-sm font-medium text-gray-700 mb-2">
-            Établissement d'obtention
+          <label className="block font-outfit text-sm font-medium text-gray-700 mb-2">
+            Etablissement d'obtention
           </label>
           <input
             type="text"
@@ -389,13 +389,13 @@ const Preinscription = () => {
             value={formData.etablissementBac}
             onChange={handleChange}
             className="input-iae"
-            placeholder="Nom de l'établissement"
+            placeholder="Nom de l'Etablissement"
           />
         </div>
       </div>
       
       <div>
-        <label className="block font-inter text-sm font-medium text-gray-700 mb-2">
+        <label className="block font-outfit text-sm font-medium text-gray-700 mb-2">
           Ville d'obtention
         </label>
         <input
@@ -404,14 +404,14 @@ const Preinscription = () => {
           value={formData.villeBac}
           onChange={handleChange}
           className="input-iae"
-          placeholder="Ville où vous avez obtenu votre bac"
+          placeholder="Ville ou vous avez obtenu votre bac"
         />
       </div>
     </motion.div>
   );
   
-  // Étape 3: Choix de filière et documents
-  const Step3 = () => (
+  // Etape 3: Choix de filiere et documents
+  const renderStep3 = () => (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
@@ -423,15 +423,15 @@ const Preinscription = () => {
         <div className="w-10 h-10 rounded-lg bg-iae-primary/10 flex items-center justify-center">
           <FileText className="w-5 h-5 text-iae-primary" />
         </div>
-        <h2 className="font-sora text-2xl font-bold text-gray-900">
-          Choix de filière et documents
+        <h2 className="font-cormorant text-2xl font-bold text-gray-900">
+          Choix de filiere et documents
         </h2>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label className="block font-inter text-sm font-medium text-gray-700 mb-2">
-            Filière souhaitée <span className="text-red-500">*</span>
+          <label className="block font-outfit text-sm font-medium text-gray-700 mb-2">
+            Filiere souhaitee <span className="text-red-500">*</span>
           </label>
           <select
             name="filiere"
@@ -439,7 +439,7 @@ const Preinscription = () => {
             onChange={handleChange}
             className={`input-iae ${errors.filiere ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
           >
-            <option value="">Sélectionnez une filière</option>
+            <option value="">Selectionnez une filiere</option>
             {filieres.map((f) => (
               <option key={f.id} value={f.id}>{f.nom}</option>
             ))}
@@ -448,8 +448,8 @@ const Preinscription = () => {
         </div>
         
         <div>
-          <label className="block font-inter text-sm font-medium text-gray-700 mb-2">
-            Année académique
+          <label className="block font-outfit text-sm font-medium text-gray-700 mb-2">
+            Annee academique
           </label>
           <select
             name="anneeAcademique"
@@ -464,7 +464,7 @@ const Preinscription = () => {
       
       <div className="space-y-4">
         <div>
-          <label className="block font-inter text-sm font-medium text-gray-700 mb-2">
+          <label className="block font-outfit text-sm font-medium text-gray-700 mb-2">
             Acte de naissance (PDF ou image, max 2Mo)
           </label>
           <div className="relative">
@@ -481,16 +481,16 @@ const Preinscription = () => {
               className="flex items-center justify-center w-full px-4 py-4 border-2 border-dashed border-gray-200 rounded-lg cursor-pointer hover:border-iae-primary hover:bg-iae-primary/5 transition-colors"
             >
               <Upload className="w-5 h-5 text-gray-400 mr-2" />
-              <span className="font-inter text-sm text-gray-600">
-                {formData.acteNaissance ? formData.acteNaissance.name : 'Cliquez pour télécharger'}
+              <span className="font-outfit text-sm text-gray-600">
+                {formData.acteNaissance ? formData.acteNaissance.name : 'Cliquez pour telecharger'}
               </span>
             </label>
           </div>
         </div>
         
         <div>
-          <label className="block font-inter text-sm font-medium text-gray-700 mb-2">
-            Attestation du baccalauréat (PDF ou image, max 2Mo)
+          <label className="block font-outfit text-sm font-medium text-gray-700 mb-2">
+            Attestation du baccalaureat (PDF ou image, max 2Mo)
           </label>
           <div className="relative">
             <input
@@ -506,8 +506,8 @@ const Preinscription = () => {
               className="flex items-center justify-center w-full px-4 py-4 border-2 border-dashed border-gray-200 rounded-lg cursor-pointer hover:border-iae-primary hover:bg-iae-primary/5 transition-colors"
             >
               <Upload className="w-5 h-5 text-gray-400 mr-2" />
-              <span className="font-inter text-sm text-gray-600">
-                {formData.attestationBac ? formData.attestationBac.name : 'Cliquez pour télécharger'}
+              <span className="font-outfit text-sm text-gray-600">
+                {formData.attestationBac ? formData.attestationBac.name : 'Cliquez pour telecharger'}
               </span>
             </label>
           </div>
@@ -523,9 +523,9 @@ const Preinscription = () => {
             onChange={handleChange}
             className="w-5 h-5 mt-0.5 text-iae-primary border-gray-300 rounded focus:ring-iae-primary"
           />
-          <span className={`font-inter text-sm ${errors.certifieExactitude ? 'text-red-500' : 'text-gray-700'}`}>
+          <span className={`font-outfit text-sm ${errors.certifieExactitude ? 'text-red-500' : 'text-gray-700'}`}>
             Je certifie l'exactitude des informations fournies dans ce formulaire 
-            et m'engage à fournir les documents originaux lors de mon inscription définitive.
+            et m'engage a fournir les documents originaux lors de mon inscription definitive.
           </span>
         </label>
         {errors.certifieExactitude && <p className="mt-1 text-sm text-red-500">{errors.certifieExactitude}</p>}
@@ -534,7 +534,7 @@ const Preinscription = () => {
   );
   
   // Message de confirmation
-  const SuccessMessage = () => (
+  const renderSuccessMessage = () => (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -544,25 +544,25 @@ const Preinscription = () => {
       <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-iae-primary/10 flex items-center justify-center">
         <CheckCircle2 className="w-10 h-10 text-iae-primary" />
       </div>
-      <h2 className="font-sora text-3xl font-bold text-gray-900 mb-4">
-        Préinscription envoyée avec succès !
+      <h2 className="font-cormorant text-3xl font-bold text-gray-900 mb-4">
+        Preinscription envoyee avec succes !
       </h2>
-      <p className="font-inter text-gray-600 max-w-lg mx-auto mb-8">
-        Merci {formData.prenom} {formData.nom} pour votre préinscription. 
-        Notre équipe étudiera votre dossier et vous contactera dans les plus brefs délais 
-        à l'adresse email {formData.email}.
+      <p className="font-outfit text-gray-600 max-w-lg mx-auto mb-8">
+        Merci {formData.prenom} {formData.nom} pour votre preinscription. 
+        Notre equipe etudiera votre dossier et vous contactera dans les plus brefs delais 
+        a l'adresse email {formData.email}.
       </p>
       <div className="bg-iae-bg rounded-lg p-6 max-w-md mx-auto mb-8">
-        <p className="font-inter text-sm text-gray-600 mb-2">
-          <span className="font-semibold">Filière choisie :</span>{' '}
+        <p className="font-outfit text-sm text-gray-600 mb-2">
+          <span className="font-semibold">Filiere choisie :</span>{' '}
           {filieres.find(f => f.id === parseInt(formData.filiere))?.nom}
         </p>
-        <p className="font-inter text-sm text-gray-600">
-          <span className="font-semibold">Année académique :</span> {formData.anneeAcademique}
+        <p className="font-outfit text-sm text-gray-600">
+          <span className="font-semibold">Annee academique :</span> {formData.anneeAcademique}
         </p>
       </div>
       <a href="/" className="btn-primary">
-        Retour à l'accueil
+        Retour a l'accueil
       </a>
     </motion.div>
   );
@@ -582,14 +582,14 @@ const Preinscription = () => {
             transition={{ duration: 0.5 }}
             className="max-w-2xl"
           >
-            <span className="inline-block font-inter text-xs font-semibold tracking-widest uppercase text-white/60 mb-4">
+            <span className="inline-block font-outfit text-xs font-semibold tracking-widest uppercase text-white/60 mb-4">
               Rejoignez l'excellence
             </span>
-            <h1 className="font-sora text-3xl md:text-4xl font-bold text-white mb-4">
-              Préinscription en ligne
+            <h1 className="font-cormorant text-3xl md:text-4xl font-bold text-white mb-4">
+              Preinscription en ligne
             </h1>
-            <p className="font-inter text-white/70">
-              Complétez ce formulaire en 3 étapes pour démarrer votre parcours à l'IAE.
+            <p className="font-outfit text-white/70">
+              Completez ce formulaire en 3 Etapes pour demarrer votre parcours a l'IAE.
             </p>
           </motion.div>
         </div>
@@ -606,16 +606,16 @@ const Preinscription = () => {
             className="bg-white rounded-xl border border-gray-100 p-8 md:p-10"
           >
             {isSubmitted ? (
-              <SuccessMessage />
+              renderSuccessMessage()
             ) : (
               <>
-                <ProgressBar />
+                {renderProgressBar()}
                 
                 <form onSubmit={handleSubmit}>
                   <AnimatePresence mode="wait">
-                    {currentStep === 1 && <Step1 key="step1" />}
-                    {currentStep === 2 && <Step2 key="step2" />}
-                    {currentStep === 3 && <Step3 key="step3" />}
+                    {currentStep === 1 && renderStep1()}
+                    {currentStep === 2 && renderStep2()}
+                    {currentStep === 3 && renderStep3()}
                   </AnimatePresence>
                   
                   {/* Boutons de navigation */}
@@ -624,14 +624,14 @@ const Preinscription = () => {
                       type="button"
                       onClick={goToPrevStep}
                       disabled={currentStep === 1}
-                      className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-inter text-sm font-medium transition-colors ${
+                      className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-outfit text-sm font-medium transition-colors ${
                         currentStep === 1
                           ? 'text-gray-300 cursor-not-allowed'
                           : 'text-gray-600 hover:bg-gray-100'
                       }`}
                     >
                       <ChevronLeft className="w-4 h-4" />
-                      <span>Précédent</span>
+                      <span>Precedent</span>
                     </button>
                     
                     {currentStep < 3 ? (
